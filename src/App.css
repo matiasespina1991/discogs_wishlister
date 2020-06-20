@@ -1,38 +1,80 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.wishlisterLogo {
+  font-size: 60px;
+  margin-top: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-global-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  text-align: left;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.input {
+  height: 25px;
+  border: 1px solid grey;
+  padding-left: 10px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.wishlistCards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  width: 800px;
+}
+
+.sortBy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.sortBy {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-right: 15px;
+  font-size: 12px;
+}
+
+.card {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  box-shadow: ;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-shadow: 3px 7px 12px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 3px 7px 12px -5px rgba(0,0,0,0.75);
+box-shadow: 3px 7px 12px -5px rgba(0,0,0,0.75);
+}
+
+.recordPic {
+  width: 80px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
