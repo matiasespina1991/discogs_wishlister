@@ -9,6 +9,7 @@ const data = {
         },
         {
             id: 2,
+            artistName: 'Large Joints',
             name: 'Large Joints ‎– Dub Plate',
             imgURL: 'https://img.discogs.com/7PTL35JOVm41hluJAQ5tyogANDM=/fit-in/500x500/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-258630-1200680920.jpeg.jpg',
             year: 1999,
