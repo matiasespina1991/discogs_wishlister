@@ -5,13 +5,13 @@ const SortBy = () => {
         <div>
             <form className="sortBy" action="/action_page.php">
                 <input type="radio" id="sortByPriority" name="sortByPriority" value="sortByPriority" />
-                <label for="sortByPriority">Priority</label>
+                <label>Priority</label>
                 <input type="radio" id="sortByAvgPrice" name="sortByAvgPrice" value="sortByAvgPrice" />
-                <label for="sortByAvgPrice">Avg. Price</label>
+                <label>Avg. Price</label>
                 <input type="radio" id="sortByNewlyAdded" name="sortByNewlyAdded" value="sortByNewlyAdded" />
-                <label for="sortByNewlyAdded">Newly Added</label>
+                <label>Newly Added</label>
                 <input type="radio" id="sortByAlphabetical" name="sortByAlphabetical" value="sortByAlphabetical" />
-                <label for="sortByAlphabetical">Alphabetical</label>
+                <label>Alphabetical</label>
             </form>
         </div>
     )

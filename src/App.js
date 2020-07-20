@@ -4,9 +4,13 @@ import WishlisterLogo from './components/WishlisterLogo';
 import Input from './components/Input';
 import WishlistCards from './components/WishlistCards';
 import data from './components/data';
+import axios from 'axios';
 
-function App() {
-
+class App extends React.Component{
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
   // create a method to collect the users input and save it in the state
   // function to split the id of the release and add it to the fetch wiht string interpolation
   // fetch from the API using the user's input information
@@ -23,13 +27,33 @@ function App() {
   //   .then(data => this.setState( { dataArray: data.data } ))
   // }
 
-  return (
-    <div className="App">
-      <WishlisterLogo />
-      <Input />
-      <WishlistCards {...data} />
-    </div>
-  );
+  parseLinkToGetId = (link) => {
+    const splittedLink = (link.split('/'));
+    console.log(splittedLink[splittedLink.length -1])
+    return splittedLink[splittedLink.length -1];
+  }
+
+  fetchRelease(releaseId) {
+    axios.get(`https://api.discogs.com/releases/${releaseId}`)
+    .then(res => {
+      console.log(res)
+    });
+}
+
+  handleSubmit = (e) => {
+   this.fetchRelease(this.parseLinkToGetId(e)); 
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <WishlisterLogo />
+        <Input handleSubmit={(e) => this.handleSubmit(e)} />
+        <WishlistCards {...data} />
+      </div>
+    );
+  }
+
 }
 
 export default App;
@@ -41,21 +65,14 @@ export default App;
 
 
 
-// fetchRelease(inputLink) {
-//   const releaseId = parseLinkToGetId(inputLink);
-//   fetch(`api.discogs.com/release/${releaseId}`)
-//     .then(res => res.json)
-// }
+
 
 
   
 
 
 
-//   parseLinkToGetId = (link) => {
-//     const splittedLink = (link.split('/'));
-//     return splittedLink[splittedLink.lenght -1];
-//   }
+
 
 
 
