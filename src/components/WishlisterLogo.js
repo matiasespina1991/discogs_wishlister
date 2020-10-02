@@ -5,7 +5,7 @@ const WishlisterLogo = () => {
     <div className="wishlisterLogo">
       <img
         className="discogs-WL-logo"
-        src="/images/discogsWishlisterLogo.png"
+        src="/images/discogsWishlisterLogo-black.png"
         alt=""
       />
     </div>

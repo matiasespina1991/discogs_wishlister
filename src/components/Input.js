@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../App.css";
 
-
 class Input extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +38,7 @@ class Input extends Component {
       .then((res) => {
         let card = {
           id: res.data.id,
-          name: `${res.data.artists[0].name} ${res.data.title}`,
+          name: `${res.data.artists[0].name} - ${res.data.title}`,
           imgURL: res.data.thumb,
           year: res.data.year,
           format: res.data.formats[0].name,
@@ -71,7 +70,6 @@ class Input extends Component {
       </div>
     );
   }
-
 }
 
 export default Input;
