@@ -1,36 +1,77 @@
-import React from 'react';
-import '../App.css';
+import React, { Component } from "react";
+import axios from "axios";
+import "../App.css";
 
 
-class  Input extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            input: ""
+class Input extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      inputLink: [],
+    };
+  }
+
+  handleSubmit = (link) => {
+    const releaseID = this.parseLinkToGetId(this.state.inputLink);
+    this.fetchRelease(releaseID);
+    link.preventDefault();
+  };
+
+  handleChange = (event) => {
+    this.setState({ inputLink: event.target.value });
+  };
+
+  parseLinkToGetId = (link) => {
+    const splittedLink = link.split("/");
+    return splittedLink[splittedLink.length - 1];
+  };
+
+  fetchRelease(releaseId) {
+    let that = this;
+    axios
+      .get(`https://api.discogs.com/releases/${releaseId}`, {
+        headers: {
+          Authorization:
+            "Discogs key=lFemHxcbdOzQulBBGTFs, secret=LUSJxqEkGYAdRwoDhvgQurEzADaYvgOx",
+        },
+      })
+      .then((res) => {
+        let card = {
+          id: res.data.id,
+          name: `${res.data.artists[0].name} ${res.data.title}`,
+          imgURL: res.data.thumb,
+          year: res.data.year,
+          format: res.data.formats[0].name,
+          userPrice: "",
         };
-        this.myChangeHandler = this.myChangeHandler.bind(this);
-    }
+        that.props.handleObjectSubmit(card);
+      });
+  }
 
-    myChangeHandler = (event) => {
-        console.log("INPUT:::", event.target.value)
-        this.setState({
-            input: event.target.value
-        })
-      }
-    
-    render(){
-        const {handleSubmit} = this.props;
-        const {input} = this.state;
-        console.log(input)
-        return (
-            <div className="input-global-container">
-                    <label>Add a release to your Wishlist</label>
-    
-                    <input className="input" type="text" id="inputLink" name="inputLink" onChange={this.myChangeHandler} placeholder="https://www.discogs.com/release/6261872" />
-                    <button onClick={() =>handleSubmit(input)}>ADD</button>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="input-global-container">
+        <form
+          className="input-container"
+          onSubmit={this.handleSubmit}
+          action=""
+        >
+          <label>Add a release to your Wishlist</label>
+          <input
+            className="input"
+            type="text"
+            id="inputLink"
+            name="inputLink"
+            value={this.state.inputLink}
+            onChange={this.handleChange}
+            placeholder="https://www.discogs.com/release/6261872"
+          />
+        </form>
+      </div>
+    );
+  }
+
 }
 
 export default Input;

@@ -1,16 +1,22 @@
-import React from 'react';
-import './App.css';
-import WishlisterLogo from './components/WishlisterLogo';
-import Input from './components/Input';
-import WishlistCards from './components/WishlistCards';
-import data from './components/data';
-import axios from 'axios';
 
-class App extends React.Component{
+import React, { Component } from "react";
+import "./App.css";
+import WishlisterLogo from "./components/WishlisterLogo";
+import Input from "./components/Input";
+import WishlistCards from "./components/WishlistCards";
+import data from "./components/data";
+
+class App extends Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.state = {
+      release: "hola",
+      data: data.Index,
+    };
   }
+
+
   // create a method to collect the users input and save it in the state
   // function to split the id of the release and add it to the fetch wiht string interpolation
   // fetch from the API using the user's input information
@@ -18,65 +24,44 @@ class App extends React.Component{
   // Make the array for the wishlist items in the state
 
   // componentDidMount() {
-  //   this.fetchData()
+  //   this.fetchData();
   // }
 
-  // fetchData = () => {
-  //   fetch('')
-  //   .then(res => res.json())
-  //   .then(data => this.setState( { dataArray: data.data } ))
-  // }
+  // fetchData = (id) => {
+  //   fetch("")
+  //     .then((res) => res.json())
+  //     .then((data) => this.setState({ dataArray: data.data }));
+  // };
 
-  parseLinkToGetId = (link) => {
-    const splittedLink = (link.split('/'));
-    console.log(splittedLink[splittedLink.length -1])
-    return splittedLink[splittedLink.length -1];
-  }
+  handleObjectSubmit = (card) => {
+    this.setState({ data: [card, ...this.state.data] });
+  };
 
-  fetchRelease(releaseId) {
-    axios.get(`https://api.discogs.com/releases/${releaseId}`)
-    .then(res => {
-      console.log(res)
-    });
-}
+  addUserPrice = (id, price) => {
+    let stateCopy = [];
+    for (let i = 0; i < this.state.data.length; i++) {
+      stateCopy[i] = this.state.data[i];
+      if (stateCopy[i].id == id) {
+        stateCopy[i] = { ...stateCopy[i], userPrice: price };
+      }
+    }
+    this.setState({ data: stateCopy });
+  };
 
-  handleSubmit = (e) => {
-   this.fetchRelease(this.parseLinkToGetId(e)); 
-  }
 
   render() {
     return (
       <div className="App">
         <WishlisterLogo />
-        <Input handleSubmit={(e) => this.handleSubmit(e)} />
-        <WishlistCards {...data} />
+        <Input handleObjectSubmit={this.handleObjectSubmit} />
+        <WishlistCards
+          Index={this.state.data}
+          addUserPrice={this.addUserPrice}
+        />
       </div>
     );
   }
-
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
 
