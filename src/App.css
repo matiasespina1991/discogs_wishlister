@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .wishlisterLogo {
@@ -66,9 +65,9 @@ input:focus::placeholder {
   width: 100%;
   display: flex;
   flex-direction: row;
-  -webkit-box-shadow: 3px 7px 12px -5px rgba(0,0,0,0.75);
--moz-box-shadow: 3px 7px 12px -5px rgba(0,0,0,0.75);
-box-shadow: 3px 7px 12px -5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 3px 7px 12px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 7px 12px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 7px 12px -5px rgba(0, 0, 0, 0.75);
 }
 
 .recordPic {
