@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../App.css";
 
+
 class Input extends Component {
   constructor(props) {
     super(props);
@@ -70,6 +71,7 @@ class Input extends Component {
       </div>
     );
   }
+
 }
 
 export default Input;

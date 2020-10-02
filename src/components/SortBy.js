@@ -1,6 +1,7 @@
 import React from "react";
 
 const SortBy = () => {
+
   return (
     <div>
       <form className="sortBy" action="/action_page.php">
@@ -44,5 +45,6 @@ const SortBy = () => {
     </div>
   );
 };
+
 
 export default SortBy;

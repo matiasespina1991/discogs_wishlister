@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import "./App.css";
 import WishlisterLogo from "./components/WishlisterLogo";
@@ -14,6 +15,7 @@ class App extends Component {
       data: data.Index,
     };
   }
+
 
   // create a method to collect the users input and save it in the state
   // function to split the id of the release and add it to the fetch wiht string interpolation
@@ -46,6 +48,7 @@ class App extends Component {
     this.setState({ data: stateCopy });
   };
 
+
   render() {
     return (
       <div className="App">
@@ -61,3 +64,4 @@ class App extends Component {
 }
 
 export default App;
+
