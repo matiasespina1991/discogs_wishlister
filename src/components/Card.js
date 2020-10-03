@@ -13,6 +13,7 @@ const Card = (props) => {
         <div className="cardText">
           <p className="title">{props.name}</p>
           <p>Format: {props.format}</p>
+          <p>Year: {props.year}</p>
         </div>
       </div>
 

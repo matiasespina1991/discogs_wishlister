@@ -79,6 +79,7 @@ input:focus::placeholder {
 .card-pic-and-text-container {
   display: flex;
   flex-direction: row;
+  width: 400px;
 }
 
 .recordPic {
@@ -87,6 +88,15 @@ input:focus::placeholder {
   margin-right: 20px;
   margin-top: 10%;
   margin-bottom: 10%;
+}
+
+.cardText {
+  font-size: 15px;
+  line-height: 14px;
+}
+
+.priority-value {
+  align-self: center;
 }
 
 .price-input-container {
@@ -108,7 +118,7 @@ input:focus::placeholder {
   background-color: transparent;
   color: white;
   border: none;
-  cursor: pointer 
+  cursor: pointer;
 }
 
 .price-input-container:hover {

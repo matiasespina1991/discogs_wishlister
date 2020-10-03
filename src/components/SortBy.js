@@ -1,23 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
-class SortBy extends Component {
-  constructor(props) {
-    super(props);
-    this.filterAlphabetical = this.filterAlphabetical.bind(this);
-    this.state = {
-      sortAlphabetical: false,
-    };
-  }
-
-  filterAlphabetical = () => {
-    this.setState({ sortAlphabetical: true });
-  };
-
-  render() {
-    return (
-      <div>
-        <form className="sortBy" action="/action_page.php">
-          {/* <label>
+const SortBy = (props) => {
+  console.log(props);
+  return (
+    <div>
+      <form className="sortBy" action="/action_page.php">
+        {/* <label>
             Priority
             <input
               type="radio"
@@ -26,16 +14,27 @@ class SortBy extends Component {
               value="sortByPriority"
             />
           </label> */}
-          <label>
-            Avg. Price
-            <input
-              type="radio"
-              id="sortByAvgPrice"
-              name="sortByAvgPrice"
-              value="sortByAvgPrice"
-            />
-          </label>
-          {/* <label>
+        <label>
+          Filter by Year Ascendant
+          <input
+            onClick={props.filterYearAscendant}
+            type="radio"
+            id="sortByYear"
+            name="sortBy"
+            value="sortByYear"
+          />
+        </label>
+        <label>
+          Filter by Year Descendant
+          <input
+            onClick={props.filterYearDescendant}
+            type="radio"
+            id="sortByYear"
+            name="sortBy"
+            value="sortByYear"
+          />
+        </label>
+        {/* <label>
             Newly Added
             <input
               type="radio"
@@ -44,20 +43,19 @@ class SortBy extends Component {
               value="sortByNewlyAdded"
             />
           </label> */}
-          <label>
-            Alphabetical
-            <input
-              onClick={this.filterAlphabetical}
-              type="radio"
-              id="sortByAlphabetical"
-              name="sortByAlphabetical"
-              value="sortByAlphabetical"
-            />
-          </label>
-        </form>
-      </div>
-    );
-  }
-}
+        <label>
+          Filter Alphabetically
+          <input
+            onClick={props.filterAlphabetical}
+            type="radio"
+            id="sortByAlphabetical"
+            name="sortBy"
+            value="sortByAlphabetical"
+          />
+        </label>
+      </form>
+    </div>
+  );
+};
 
 export default SortBy;
