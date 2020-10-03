@@ -108,6 +108,12 @@ input:focus::placeholder {
   background-color: transparent;
   color: white;
   border: none;
+  cursor: pointer 
+}
+
+.price-input-container:hover {
+  cursor: pointer !important;
+  background-color: #5e5e5e31;
 }
 
 .price-input:focus {

@@ -1,4 +1,5 @@
 import React from "react";
+import StarRating from "./StarRating";
 import "../App.css";
 
 const Card = (props) => {
@@ -15,7 +16,9 @@ const Card = (props) => {
         </div>
       </div>
 
-      <div className="priority-value"></div>
+      <div className="priority-value">
+        <StarRating rating={props.rating} />
+      </div>
 
       <div className="price-input-container">
         <label>

@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import "./App.css";
 import WishlisterLogo from "./components/WishlisterLogo";
@@ -13,25 +12,9 @@ class App extends Component {
     this.state = {
       release: "hola",
       data: data.Index,
+      rating: 0,
     };
   }
-
-
-  // create a method to collect the users input and save it in the state
-  // function to split the id of the release and add it to the fetch wiht string interpolation
-  // fetch from the API using the user's input information
-  // save the data from the API on the state
-  // Make the array for the wishlist items in the state
-
-  // componentDidMount() {
-  //   this.fetchData();
-  // }
-
-  // fetchData = (id) => {
-  //   fetch("")
-  //     .then((res) => res.json())
-  //     .then((data) => this.setState({ dataArray: data.data }));
-  // };
 
   handleObjectSubmit = (card) => {
     this.setState({ data: [card, ...this.state.data] });
@@ -48,13 +31,13 @@ class App extends Component {
     this.setState({ data: stateCopy });
   };
 
-
   render() {
     return (
       <div className="App">
         <WishlisterLogo />
         <Input handleObjectSubmit={this.handleObjectSubmit} />
         <WishlistCards
+          rating={this.state.rating}
           Index={this.state.data}
           addUserPrice={this.addUserPrice}
         />
@@ -64,4 +47,3 @@ class App extends Component {
 }
 
 export default App;
-

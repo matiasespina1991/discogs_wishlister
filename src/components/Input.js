@@ -59,6 +59,7 @@ class Input extends Component {
           <label>Add a release to your Wishlist</label>
           <input
             className="input"
+            autoComplete="off"
             type="text"
             id="inputLink"
             name="inputLink"
