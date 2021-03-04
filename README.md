@@ -1,6 +1,7 @@
 # Final project for Wild Code School - Frontend Developer Course
 
 This project consists on a tool designed to set and organize a vinyl records wishlist for Discogs junkies.
+<br />
 
 #### Instructions
                 
@@ -16,8 +17,12 @@ Demo:
   <img src="https://media1.giphy.com/media/gMrFaFo4YXvwBi5u1W/giphy.gif" alt="" />
 </p>
 
+
+<p align="center">
 #### Tools used:
 
 - React.js
 - Javascript
 - HTML/CSS
+
+</p>
