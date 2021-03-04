@@ -2,7 +2,7 @@
 
 This project consists on a tool designed to set and organize a vinyl records wishlist for Discogs junkies.
 
-####Instructions
+#### Instructions
                 
 1. Copy the link of any release.
 2. Paste it in the input.
@@ -10,13 +10,14 @@ This project consists on a tool designed to set and organize a vinyl records wis
 4. Release added to wishlist :)
 5. Set a priority and the average price on Discogs.
 
-####Tools used:
-
-- React.js
-- Javascript
-- HTML/CSS
-
+Demo:
 
 <p align="center">
   <img src="https://media1.giphy.com/media/gMrFaFo4YXvwBi5u1W/giphy.gif" alt="" />
 </p>
+
+#### Tools used:
+
+- React.js
+- Javascript
+- HTML/CSS
