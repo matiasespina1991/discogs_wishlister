@@ -10,8 +10,8 @@ This project consists on a tool designed to set and organize a vinyl records wis
 3. Press [Enter].
 4. Release added to wishlist :)
 5. Set a priority and the average price on Discogs.
+6. Done!
 
-Demo:
 
 <p align="center">
   <img src="https://media1.giphy.com/media/gMrFaFo4YXvwBi5u1W/giphy.gif" alt="" />
