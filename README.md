@@ -18,11 +18,9 @@ Demo:
 </p>
 
 
-<p align="center">
-#### Tools used:
+
+#### Languages used:
 
  - React.js
  - Javascript
  - HTML/CSS
-
-</p>
