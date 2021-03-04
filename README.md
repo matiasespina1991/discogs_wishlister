@@ -21,8 +21,8 @@ Demo:
 <p align="center">
 #### Tools used:
 
-- React.js
-- Javascript
-- HTML/CSS
+ - React.js
+ - Javascript
+ - HTML/CSS
 
 </p>
