@@ -14,7 +14,7 @@ This project consists on a tool designed to set and organize a vinyl records wis
 
 
 <p align="center">
-  <img src="https://media1.giphy.com/media/gMrFaFo4YXvwBi5u1W/giphy.gif" alt="" />
+  <img width="700px;" src="https://media1.giphy.com/media/gMrFaFo4YXvwBi5u1W/giphy.gif" alt="" />
 </p>
 
 
