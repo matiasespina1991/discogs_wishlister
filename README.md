@@ -19,7 +19,7 @@ This project consists on a tool designed to set and organize a vinyl records wis
 
 
 
-#### Languages used:
+#### Languages / frameworks used:
 
  - React.js
  - Javascript
